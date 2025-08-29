@@ -1,0 +1,101 @@
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+    }
+
+    .top-bar {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 12px 16px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .top-bar h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .top-bar p {
+      margin: 2px 0 0;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .flight-background {
+      background: url("/content/dam/mysite/travpages.jpg") ;
+      background-size: 1500px 1000px;
+      background-repeat: no-repeat;
+    }
+
+    .flight-list {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+
+    .flight-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      margin-top:0px;
+      margin-bottom: 15px;
+      padding: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .flight-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap:180px;
+    }
+
+    .airline {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .details {
+      font-size: 14px;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    .price-action {
+      text-align: center;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2d2d2d;
+    }
+
+    .book-btn {
+      margin-top: 6px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .book-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .back-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+      margin: 0px auto;
+      text-align: center;
+    }

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Booking Form</title>
+  <style>
+    body {
+      background: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .booking-form {
+      max-width: 900px;
+      margin: 40px auto 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .booking-form .radio-group {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .booking-form .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .booking-form .form-row label {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+    }
+
+    .booking-form select,
+    .booking-form input[type="date"] {
+      height: 40px;
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .booking-form .bottom-row {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .booking-form .bottom-row label {
+      flex: 2;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+    }
+
+    .booking-form .bottom-row button {
+      flex: 1;
+      margin-top: 40px;
+      line-height: 15px;
+      height: 40px;
+      background: #f43f5e;
+      color: white;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .booking-form .bottom-row button:hover {
+      background: #e11d48;
+    }
+  </style>
+</head>
+<body>
+
+<div class="booking-form" data-sly-use.model="my.site.my_site.core.models.BookingFormModel">
+
+  <div class="radio-group">
+    <label><input type="radio" name="tripType" value="round" checked onchange="toggleReturnDate()"> Round Trip</label>
+    <label><input type="radio" name="tripType" value="oneway" onchange="toggleReturnDate()"> One Way</label>
+  </div>
+
+  <div class="form-row">
+    <label>From
+      <select id="fromCity">
+        <option value="">Select From</option>
+        <sly data-sly-list="${model.fromCities}">
+          <option value="${item}">${item}</option>
+        </sly>
+      </select>
+    </label>
+
+    <label>To
+      <select id="toCity">
+        <option value="">Select To</option>
+        <sly data-sly-list="${model.toCities}">
+          <option value="${item}">${item}</option>
+        </sly>
+      </select>
+    </label>
+
+    <label>Depart Date
+      <input type="date" id="departDate">
+    </label>
+
+    <label>Return Date
+      <input type="date" id="returnDate">
+    </label>
+  </div>
+
+  <div class="bottom-row">
+    <label>Travellers & Cabin
+      <select id="travellers">
+        <option value="">Select</option>
+        <sly data-sly-list="${model.travellerOptions}">
+          <option value="${item}">${item}</option>
+        </sly>
+      </select>
+    </label>
+
+    <button onclick="searchFlights()">Search Flights</button>
+  </div>
+</div>
+
+<script>
+  function toggleReturnDate() {
+    const tripType = document.querySelector('input[name="tripType"]:checked').value;
+    const returnDate = document.getElementById("returnDate");
+    if (tripType === "oneway") {
+      returnDate.disabled = true;
+      returnDate.value = "";
+    } else {
+      returnDate.disabled = false;
+    }
+  }
+
+  function searchFlights() {
+    const from = document.getElementById("fromCity").value;
+    const to = document.getElementById("toCity").value;
+    const departDate = document.getElementById("departDate").value;
+    const returnDate = document.getElementById("returnDate").value;
+    const travellers = document.getElementById("travellers").value;
+    const tripType = document.querySelector('input[name="tripType"]:checked').value;
+
+    if (!from || !to || !departDate || !travellers || (tripType === "round" && !returnDate)) {
+      alert("Please fill all the fields");
+      return;
+    }
+
+    if (from === "Bangalore" && to === "Hyderabad") {
+      window.location.href = "/content/mysite/us/landing-page/btoh.html";
+    } else if (from === "Hyderabad" && to === "Chennai") {
+      window.location.href = "/content/mysite/us/landing-page/htoc.html";
+    } else if (from === "Bangalore" && to === "Chennai") {
+      window.location.href = "/content/mysite/us/landing-page/btoc.html";
+    } else if (from === "Chennai" && to === "Hyderabad") {
+      window.location.href = "/content/mysite/us/landing-page/ctoh.html";
+    } else if (from === "Chennai" && to === "Bangalore") {
+      window.location.href = "/content/mysite/us/landing-page/ctob.html";
+    } else if (from === "Hyderabad" && to === "Bangalore") {
+      window.location.href = "/content/mysite/us/landing-page/htob.html";
+    } else {
+      alert("Flights for this route not available or invalid selection.");
+    }
+  }
+
+const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+  const formattedTomorrow = tomorrow.toISOString().split('T')[0];
+
+  document.getElementById("departDate").setAttribute("min", formattedTomorrow);
+  document.getElementById("returnDate").setAttribute("min", formattedTomorrow);
+
+
+  window.onload = toggleReturnDate;
+
+
+</script>
+
+</body>
+</html>

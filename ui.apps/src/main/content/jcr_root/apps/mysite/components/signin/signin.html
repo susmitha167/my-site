@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In - GreenFeather</title>
+    <style>
+        .signin-wrapper {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .signin-wrapper h2 {
+            text-align: center;
+            color: #2e7d32;
+        }
+
+        .signin-wrapper .form-group {
+            margin-bottom: 20px;
+        }
+
+        .signin-wrapper label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .signin-wrapper input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .signin-wrapper input.invalid {
+            border-color: red;
+            background-color: #ffe6e6;
+        }
+
+        .signin-wrapper .forgot-password {
+            font-size: 14px;
+            color: #388e3c;
+            cursor: pointer;
+            text-align: right;
+        }
+
+        .signin-wrapper button {
+            width: 100%;
+            padding: 12px;
+            background-color: #43a047;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signin-wrapper .signup {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .signin-wrapper .signup a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+
+
+
+</head>
+<body>
+<div class="signin-wrapper">
+<div class="container">
+    <h2>LogIn</h2>
+    <form id="loginForm">
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <div class="forgot-password" onclick="alert('Please Contact Us to receive a password reset link.')">Forgot Password?</div>
+        </div>
+        <button type="submit">LogIn</button>
+        <div class="signup">Don't have an account? <a href="/content/mysite/language-masters/home-page/signin.html">SignIn</a></div>
+    </form>
+</div>
+</div>
+
+<script>
+    const emailInput = document.getElementById('email');
+    const form = document.getElementById('loginForm');
+
+    emailInput.addEventListener('input', function () {
+        if (!emailInput.value.includes('.com')) {
+            emailInput.classList.add('invalid');
+        } else {
+            emailInput.classList.remove('invalid');
+        }
+    });
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = emailInput.value;
+        const password = document.getElementById('password').value;
+
+        if (!email.includes('.com')) {
+            alert('Email must contain ".com"');
+            emailInput.classList.add('invalid');
+            return;
+        }
+
+        if (email && password) {
+            // Show alert and then redirect after user clicks OK
+            alert('Login successful!');
+            window.location.href = "/content/mysite/language-masters/home-page.html";
+        } else {
+            alert('Please fill in all fields.');
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<sly data-sly-use.header="my.site.my_site.core.models.Header" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CloudTrips - Header</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .site-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+        .top-bar {
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #333;
+        }
+        .contact-info span {
+            margin-right: 20px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="top-bar">
+        <div class="contact-info">
+            <span>📍 San Diego, CA</span>
+            <span>📞 +1 800 123 4567</span>
+            <span>✉️ info@cloudtrips.com</span>
+        </div>
+    </div>
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="UploadedImage0.jpg" alt="CloudTrips Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="/content/cloud-trips-sites/homepage.html">Home</a></li>
+            <li><a href="/content/cloud-trips-sites/about.html">About</a></li>
+            <li><a href="/content/cloud-trips-sites/blog.html">Blog</a></li>
+            <li><a href="/content/cloud-trips-sites/pages.html">Pages</a></li>
+            <li><a href="/content/cloud-trips-sites/contacts.html">Contacts</a></li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkyGo Flight Booking FAQs</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: #f9f9f9;
+          padding: 20px;
+        }
+        .faq-container {
+          max-width: 800px;
+          margin: auto;
+        }
+        .faq-title {
+          text-align: center;
+          font-size: 28px;
+          margin-bottom: 30px;
+          color: #333;
+        }
+        .faq-item {
+          background: #fff;
+          border: 1px solid #ddd;
+          margin-bottom: 10px;
+          border-radius: 5px;
+        }
+        .faq-question {
+          padding: 15px;
+          cursor: pointer;
+          font-weight: bold;
+          background: #f0f0f0;
+        }
+        .faq-answer {
+          display: none;
+          padding: 15px;
+          border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="faq-title">SkyGo – Frequently Asked Questions (FAQs)</div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            What is SkyGo?
+        </div>
+        <div class="faq-answer">
+            SkyGo is a seamless flight booking platform that helps travelers find, compare, and book domestic and international flights at the best prices.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            How do I book a flight on SkyGo?
+        </div>
+        <div class="faq-answer">
+            Simply enter your departure and destination cities, select your travel dates, and choose from a list of available flights. Follow the prompts to complete your booking.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            Can I cancel or modify my booking?
+        </div>
+        <div class="faq-answer">
+            Yes, you can manage your booking through the “My Trips” section. Cancellation and modification policies depend on the airline and fare type.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            Does SkyGo offer refunds?
+        </div>
+        <div class="faq-answer">
+            Refund eligibility depends on the airline’s policy. Refundable tickets will be processed within 7–10 business days.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            Is it safe to book through SkyGo?
+        </div>
+        <div class="faq-answer">
+            Absolutely. SkyGo uses secure payment gateways and complies with global data protection standards to ensure your information is safe.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            Can I book multi-city or round-trip flights?
+        </div>
+        <div class="faq-answer">
+            Yes, SkyGo supports one-way, round-trip, and multi-city bookings.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            Do I need to create an account to book a flight?
+        </div>
+        <div class="faq-answer">
+            No, but creating an account allows you to track bookings, receive alerts, and access exclusive deals.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            How do I contact SkyGo customer support?
+        </div>
+        <div class="faq-answer">
+            You can reach us via live chat, email, or our 24/7 helpline listed on the Contact Us page.
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleAnswer(element) {
+      const answer = element.nextElementSibling;
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+</script>
+
+</body>
+</html>

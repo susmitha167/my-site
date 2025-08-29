@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Listing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+    }
+
+    .top-bar {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 12px 16px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .top-bar h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .top-bar p {
+      margin: 2px 0 0;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .flight-background {
+      background: url("/content/dam/mysite/travpages.jpg") ;
+      background-size: 1500px 1000px;
+      background-repeat: no-repeat;
+    }
+
+    .flight-list {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+
+    .flight-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .flight-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap:180px;
+    }
+
+    .airline {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .details {
+      font-size: 14px;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    .price-action {
+      text-align: center;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2d2d2d;
+    }
+
+    .book-btn {
+      margin-top: 6px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .book-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .back-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+      margin: 0px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <h1>Bangalore → Hyderabad</h1>
+  <p>1 Traveller • Economy</p>
+</div>
+
+<div class="flight-background">
+  <div class="flight-list">
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">✈️ Air India Express • IX 1017</div>
+          <div class="details">05:50PM → 07:30PM • 1h 40m • Non-stop</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹5,060</div>
+          <button class="book-btn" onclick="goToSeatSelection1()">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">🛋 IndiGo • 6E 217</div>
+          <div class="details">05:25AM → 07:05AM • 1h 40m • Non-stop</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹4,209</div>
+          <button class="book-btn" onclick="goToSeatSelection1()">Book Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">✈️ Air India Express • IN 1017</div>
+          <div class="details">06:50PM → 07:30PM • 1h 40m • Non-stop</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹6,060</div>
+          <button class="book-btn" onclick="goToSeatSelection1()">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">🛋 IndiGo • 6E 6336</div>
+          <div class="details">12:35PM → 14:15PM • 1h 40m • Non-stop</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹4,398</div>
+          <button class="book-btn" onclick="goToSeatSelection1()">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">✈️ SpiceJet • SG 421</div>
+          <div class="details">15:00PM → 16:45PM • 1h 45m • Non-stop</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹5,299</div>
+          <button class="book-btn" onclick="goToSeatSelection1()">Book Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">🛋 IndiGo • 6Z 6336</div>
+          <div class="details">12:35PM → 14:15PM • 1h 40m • Non-stop</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹6,398</div>
+          <button class="book-btn" onclick="goToSeatSelection1()">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="back-btn" onclick="goBackToSearch()">← Back to Search</button>
+
+<script>
+  function goToSeatSelection1() {
+    window.location.href = '/content/mysite/us/landing-page/seats.html';
+  }
+  function goBackToSearch() {
+    window.location.href = '/content/mysite/us/landing-page.html'; // Change this URL as needed
+  }
+</script>
+
+</body>
+</html>

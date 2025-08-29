@@ -1,0 +1,31 @@
+<sly data-sly-use.susmithaModel="my.site.my_site.core.models.SusmithaModel">
+
+<style>
+  .a4-poster {
+    width: 70mm;
+    height: 97mm;
+    transition: transform 0.3s ease;
+  }
+  .cmp-hero__image {
+    margin-top: 100px;
+  }
+</style>
+
+<div class="cmp-hero__image">
+  <center>
+    <a href="${susmithaModel.link}.html" target="_blank">
+    <img src="${susmithaModel.image}" class="a4-poster" />
+    </a>
+
+  </center>
+</div>
+
+<blockquote>
+  <center>
+    ${susmithaModel.title}<br>
+    ${susmithaModel.description}<br>
+  </center>
+</blockquote>
+
+<script src="script.js"></script>
+</sly>

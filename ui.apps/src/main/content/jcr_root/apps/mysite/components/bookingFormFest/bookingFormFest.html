@@ -1,0 +1,91 @@
+<div class="form-container"
+     style="max-width:400px;margin:auto;background:#fff;padding:20px;border-radius:8px;font-family:Arial,sans-serif;"
+     data-sly-use.model="my.site.my_site.core.models.BookingFormFest">
+
+  <div class="radio-group" style="display:flex;gap:10px;margin-bottom:10px;">
+    <label><input type="radio" name="tripType" value="round" checked onchange="toggleReturnDate()"> Round Trip</label>
+    <label><input type="radio" name="tripType" value="oneway" onchange="toggleReturnDate()"> One Way</label>
+  </div>
+
+  <label>From
+    <select id="fromCity" style="width:100%;padding:8px;margin-top:4px;border:1px solid #ccc;border-radius:4px;">
+      <option value="">Select From</option>
+      <sly data-sly-list="${model.fromCities}">
+        <option value="${item}">${item}</option>
+      </sly>
+    </select>
+  </label>
+
+  <label style="margin-top:10px;">To
+    <select id="toCity" style="width:100%;padding:8px;margin-top:4px;border:1px solid #ccc;border-radius:4px;">
+      <option value="">Select To</option>
+      <sly data-sly-list="${model.toCities}">
+        <option value="${item}">${item}</option>
+      </sly>
+    </select>
+  </label>
+
+  <label style="margin-top:10px;">Depart Date
+    <input type="date" id="departDate" style="width:100%;padding:8px;margin-top:4px;border:1px solid #ccc;border-radius:4px;">
+  </label>
+
+  <label style="margin-top:10px;">Return Date
+    <input type="date" id="returnDate" style="width:100%;padding:8px;margin-top:4px;border:1px solid #ccc;border-radius:4px;">
+  </label>
+
+  <label style="margin-top:10px;">Travellers & Cabin
+    <select id="travellers" style="width:100%;padding:8px;margin-top:4px;border:1px solid #ccc;border-radius:4px;">
+      <option value="">Select</option>
+      <sly data-sly-list="${model.travellerOptions}">
+        <option value="${item}">${item}</option>
+      </sly>
+    </select>
+  </label>
+
+  <button onclick="searchFlights()" style="width:100%;background:#f43f5e;color:white;border:none;padding:10px;margin-top:15px;cursor:pointer;border-radius:4px;font-weight:bold;">
+    Search Flights
+  </button>
+</div>
+
+<script>
+  function toggleReturnDate() {
+    var tripType = document.querySelector('input[name="tripType"]:checked').value;
+    var returnDate = document.getElementById("returnDate");
+    if (tripType === "oneway") {
+      returnDate.disabled = true;
+      returnDate.value = "";
+    } else {
+      returnDate.disabled = false;
+    }
+  }
+
+  function searchFlights() {
+    var from = document.getElementById("fromCity").value;
+    var to = document.getElementById("toCity").value;
+    var departDate = document.getElementById("departDate").value;
+    var returnDate = document.getElementById("returnDate").value;
+    var travellers = document.getElementById("travellers").value;
+    var tripType = document.querySelector('input[name="tripType"]:checked').value;
+
+    if (!from || !to || !departDate || !travellers || (tripType === "round" && !returnDate)) {
+      alert("Please fill all the fields");
+      return;
+    }
+
+    if (from === "Bangalore" && to === "Hyderabad") {
+      window.location.href = "/content/mysite/language-masters/festival-bangalore-hyderabad.html";
+    } else if (from === "Hyderabad" && to === "Chennai") {
+      window.location.href = "/content/mysite/language-masters/festival-hyderabad-chennai.html";
+    } else if (from === "Bangalore" && to === "Chennai") {
+      window.location.href = "/content/mysite/language-masters/festival-bangalore-chennai.html";
+    } else if (from === "Chennai" && to === "Hyderabad") {
+      window.location.href = "/content/mysite/language-masters/festival-chennai-hyderabad.html";
+    } else if (from === "Chennai" && to === "Bangalore") {
+      window.location.href = "/content/mysite/language-masters/festival-chennai-bangalore.html";
+    } else {
+      alert("Flights for this route not available or invalid selection.");
+    }
+  }
+
+  window.onload = toggleReturnDate;
+</script>

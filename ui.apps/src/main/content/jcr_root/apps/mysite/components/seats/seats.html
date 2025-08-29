@@ -1,0 +1,30 @@
+
+<div data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.all @ categories='seats.clientlib'}"></div>
+<header>Seat Selection</header>
+
+<div class="background-wrapper">
+  <div class="legend">
+    <span><div class="box" style="background:#c2f0c2;"></div>Free</span>
+    <span><div class="box" style="background:#ffe08c;"></div>Available</span>
+    <span><div class="box" style="background:#ccc;"></div>Occupied</span>
+  </div>
+
+  <div class="seat-map" id="seatMap"></div>
+
+  <div class="button-container">
+    <button onclick="continuePayment()">
+      <i class="fas fa-credit-card"></i> Continue To Payment
+    </button>
+  </div>
+
+  <div id="confirmationBox">
+    <h3>✅ Seat Booked</h3>
+    <p id="bookedSeatsText"></p>
+    <button onclick="closeConfirmation()">OK</button>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <segments/>
+    <templates/>
+    <policies
+        jcr:created="{Date}2025-06-25T12:40:19.794+05:30"
+        jcr:createdBy="admin"
+        jcr:primaryType="nt:unstructured">
+        <wcm jcr:primaryType="nt:unstructured">
+            <foundation jcr:primaryType="nt:unstructured">
+                <components jcr:primaryType="nt:unstructured">
+                    <page jcr:primaryType="nt:unstructured">
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                        <default
+                            jcr:description="Policy of the default page"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Default Page"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            clientlibs="[wcm.foundation.components.page.responsive]">
+                            <jcr:content
+                                jcr:primaryType="nt:unstructured"
+                                mergeList="{Boolean}true"/>
+                        </default>
+                    </page>
+                    <responsivegrid jcr:primaryType="nt:unstructured">
+                        <policy_37678123067500
+                            jcr:lastModified="{Date}2025-06-27T16:12:08.663+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="We.Train Structure Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[/libs/dam/cfm/components/contentfragment,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:We.Train.Structure]">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_37678123067500>
+                        <policy_41552794156900
+                            jcr:lastModified="{Date}2025-06-26T13:13:14.847+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="We.Train Content Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[/libs/dam/cfm/components/contentfragment,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:We.Train]">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_41552794156900>
+                        <policy_51192771964000
+                            jcr:lastModified="{Date}2025-06-25T22:51:20.153+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="blog editable"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[/libs/dam/cfm/components/contentfragment,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid]">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_51192771964000>
+                        <policy_51251674661000
+                            jcr:lastModified="{Date}2025-06-25T22:52:27.997+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="inner policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[/libs/dam/cfm/components/contentfragment,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid]">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_51251674661000>
+                    </responsivegrid>
+                </components>
+            </foundation>
+        </wcm>
+        <apps jcr:primaryType="nt:unstructured">
+            <training jcr:primaryType="nt:unstructured">
+                <components jcr:primaryType="nt:unstructured">
+                    <structure jcr:primaryType="nt:unstructured">
+                        <page jcr:primaryType="nt:unstructured">
+                            <policy_1750911861016
+                                jcr:lastModified="{Date}2025-06-26T09:55:36.574+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Custom client libs"
+                                sling:resourceType="wcm/core/components/policy/policy"
+                                clientlibs="[wcm.foundation.components.page.responsive,we.train.custom.lib]">
+                                <jcr:content jcr:primaryType="nt:unstructured"/>
+                            </policy_1750911861016>
+                        </page>
+                    </structure>
+                </components>
+            </training>
+        </apps>
+        <training jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <content jcr:primaryType="nt:unstructured">
+                    <image jcr:primaryType="nt:unstructured">
+                        <policy_1750923946562
+                            jcr:lastModified="{Date}2025-06-26T13:19:55.788+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="We.Train Image Content Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            allowedRenditionWidths="1024"
+                            allowUpload="false"
+                            altValueFromDAM="true"
+                            disableLazyLoading="true"
+                            displayPopupTitle="true"
+                            isDecorative="false"
+                            jpegQuality="{Long}100"
+                            titleValueFromDAM="true"
+                            uuidDisabled="true">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                            <plugins jcr:primaryType="nt:unstructured">
+                                <crop jcr:primaryType="nt:unstructured">
+                                    <aspectRatios jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            jcr:primaryType="nt:unstructured"
+                                            name="Wide Landscape"
+                                            ratio="0.6180"/>
+                                        <item1
+                                            jcr:primaryType="nt:unstructured"
+                                            name="Landscape"
+                                            ratio="0.8284"/>
+                                        <item2
+                                            jcr:primaryType="nt:unstructured"
+                                            name="Square"
+                                            ratio="1"/>
+                                        <item3
+                                            jcr:primaryType="nt:unstructured"
+                                            name="Portrait"
+                                            ratio="1.6180"/>
+                                    </aspectRatios>
+                                </crop>
+                            </plugins>
+                        </policy_1750923946562>
+                    </image>
+                </content>
+                <structure jcr:primaryType="nt:unstructured">
+                    <languagenavigation jcr:primaryType="nt:unstructured">
+                        <policy_78892615791300
+                            jcr:lastModified="{Date}2025-06-27T16:20:49.172+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="We.Train LangNav "
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            navigationRoot="/content/we-train"
+                            structureDepth="1">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_78892615791300>
+                    </languagenavigation>
+                    <search jcr:primaryType="nt:unstructured"/>
+                </structure>
+            </components>
+        </training>
+    </policies>
+    <template-types/>
+</jcr:root>

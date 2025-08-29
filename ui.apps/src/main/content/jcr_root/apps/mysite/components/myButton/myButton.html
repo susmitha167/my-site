@@ -1,0 +1,12 @@
+<div data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.all @ categories='myButton.clientlib'}"></div>
+
+<!-- UI markup -->
+<div>
+
+    <input type="text" id="userInput"
+           value="${properties.name @ context='text'}"
+           placeholder="Enter name..." />
+    <button id="submitBtn">Submit</button>
+    <div id="responseDiv"></div>
+</div>

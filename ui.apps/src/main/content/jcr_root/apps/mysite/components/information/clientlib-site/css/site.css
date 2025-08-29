@@ -1,0 +1,149 @@
+.info-component {
+  font-family: 'Roboto', sans-serif;
+  background: url("/content/dam/mysite/info.jpg") no-repeat top center fixed;
+  background-size: 1300px 1000px;
+  background-repeat: no-repeat;
+}
+
+.info-component .container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.info-component h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.info-component .row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  align-items: flex-start; /* Align all fields to the top */
+}
+
+.info-component .row > div {
+  flex: 1;
+  min-width: 150px;
+  margin-right: 20px;
+  margin-bottom: 20px; /* Equal vertical spacing */
+}
+
+.info-component label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.info-component input,
+.info-component select {
+  height: 42px; /* Normalize height */
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+
+
+.info-component select {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: -5px; /* 👈 Slight upward shift */
+}
+
+.info-component .note {
+  font-size: 12px;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.info-component .link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.info-component .section-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.info-component .payment-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.info-component .payment-section button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.info-component .payment-icons img {
+  margin: 0 5px;
+  vertical-align: middle;
+  height: 30px;
+}
+
+.info-component #reviewModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+.info-component #reviewModal .modal-content {
+  background: #fff;
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.info-component #reviewModal button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.info-component .confirm-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.info-component .edit-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Specific field adjustments */
+.code,
+.title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  width: 100%;
+}

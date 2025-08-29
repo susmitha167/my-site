@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Listing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+    }
+
+    .top-bar {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 12px 16px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .top-bar h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .top-bar p {
+      margin: 2px 0 0;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .flight-background {
+      background: url("/content/dam/mysite/bbban.jpg") no-repeat top center fixed;
+      background-size: 1500px 1000px;
+      background-repeat: no-repeat;
+    }
+
+    .flight-list {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-bottom: 50px;
+      padding-top:50px;
+    }
+
+    .flight-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .flight-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap:180px;
+    }
+
+    .airline {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .details {
+      font-size: 14px;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    .price-action {
+       text-align: center;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2d2d2d;
+    }
+
+    .book-btn {
+      margin-top: 6px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .book-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .back-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+      margin: 0px auto;
+      text-align: center;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background: #e6e6fa;
+      color: #000;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .modal-content p {
+      font-size: 16px;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .close-btn {
+      margin-top: 15px;
+      background-color:#007bff ;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <h1>Hyderabad Flights</h1>
+  <p>1 Traveller • Economy</p>
+</div>
+
+<div class="flight-background">
+  <div class="flight-list">
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">✈️ Air India Express • IP 1417</div>
+          <div class="details">Chennai → Hyderabad </div>
+          <div class="details">05:50AM → 07:30AM • 1h 40m • 05 Aug</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹7,060</div>
+          <button class="book-btn" onclick="showPopup(7060)">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">🛋 IndiGo • 6C 517</div>
+          <div class="details">Bangalore → Hyderabad </div>
+          <div class="details">05:25AM → 07:05AM • 1h 40m • 06 Aug</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹5,209</div>
+          <button class="book-btn" onclick="showPopup(5209)">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">🛋 IndiGo • 6F 6336</div>
+          <div class="details">Chennai → Hyderabad </div>
+          <div class="details">12:35PM → 14:15PM • 1h 40m • 06 Aug</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹4,398</div>
+          <button class="book-btn" onclick="showPopup(4398)">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-info">
+        <div>
+          <div class="airline">✈️ SpiceJet • SM 421</div>
+          <div class="details">Bangalore → Hyderabad </div>
+          <div class="details">15:00PM → 16:45PM • 1h 45m • 05 Aug</div>
+        </div>
+        <div class="price-action">
+          <div class="price">₹5,000</div>
+          <button class="book-btn" onclick="showPopup(5000)">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="back-btn" onclick="goBackToSearch()">← Back to Search</button>
+
+<!-- Modal -->
+<div id="discountModal" class="modal">
+  <div class="modal-content">
+    <h2>🎉40% Discount Applied!</h2>
+    <p id="originalPrice"></p>
+    <p id="discountValue"></p>
+    <p id="finalPrice"></p>
+    <button class="close-btn" onclick="goToSeatSelection()">OK</button>
+  </div>
+</div>
+
+<script>
+  function showPopup(price) {
+    var discount = price * 0.6;
+    var discounted = price - discount;
+
+    document.getElementById('originalPrice').innerText = 'Original Price: ₹' + price.toFixed(0);
+    document.getElementById('discountValue').innerText = 'Discount: ₹' + discount.toFixed(0);
+    document.getElementById('finalPrice').innerText = 'Final Price: ₹' + discounted.toFixed(0);
+
+    document.getElementById('discountModal').style.display = 'block';
+  }
+
+  function goToSeatSelection() {
+    document.getElementById('discountModal').style.display = 'none';
+    window.location.href = '/content/mysite/us/landing-page/seats.html';
+  }
+  function goBackToSearch() {
+    window.location.href = '/content/mysite/us/landing-page.html'; // Change this URL as needed
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+.a4-poster {
+    width: 70mm;
+    height: 97mm;
+    transition: transform 0.3s ease;
+  }
+  .cmp-hero__image {
+    margin-top: 100px;
+  }
